@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gospel Drama Community</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #8E2DE2, #4A00E0);
+      color: #fff;
+      height: 200vh;
+      overflow-x: hidden;
+      text-align: center;
+      background: url('gedion.jpg') center/cover no-repeat;
+      height: 100%;
+    }
+
+    .welcome-section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      perspective: 1000px;
+    }
+
+
+    .welcome-text {
+      transform: rotateY(20deg);
+      animation: rotateText 3s ease-in-out infinite alternate;
+      font-size: 6em;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      
+    }
+
+    @keyframes rotateText {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(20deg);
+      }
+    }
+
+    .content {
+      padding: 20px;
+      text-align: left;
+      font-size: 1.2em;
+      line-height: 1.5;
+      background: rgba(0, 0, 0, 0.466);
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 10px;
+      transform: rotateX(10deg);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .subscribe-button {
+      display: inline-block;
+      padding: 10px 30px;
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      transition: transform .5s;
+    }
+
+    .subscribe-button:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    .content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .footer {
+      margin-top: 20px;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px; /* Increased space between icons */
+      margin-top: 30px;
+    }
+
+    .contact-icons a {
+      color: white;
+      font-size: 2em;
+      text-decoration: none;
+      transition: transform .3s, color .3s;
+    }
+
+    .contact-icons a:hover {
+      transform: scale(1.5);
+    }
+
+    /* Specific styling for WhatsApp */
+    .whatsapp-icon:hover {
+      color: #25D366;
+    }
+
+    /* Specific styling for Email */
+    .email-icon:hover {
+      color: #5eb0fd; /* Gmail red */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="welcome-section">
+    <div class="welcome-text">
+      GIDEON DRAMA MINISTRY
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Join the Drama Ministry</h2>
+    <p>
+      Are you passionate about sharing the Gospel and touching hearts through the power of storytelling?
+      Do you desire to use your creative talents to serve God and inspire others? Then consider joining
+      the drama ministry!
+    </p>
+    <p>
+      Through drama, you can:
+      <ul>
+        <li>Share the message of salvation and hope with a wider audience</li>
+        <li>Bring Bible stories and scriptures to life in an engaging and memorable way</li>
+        <li>Provide a creative outlet for worship and expression</li>
+        <li>Build confidence and teamwork skills</li>
+        <li>Reach people who may not be receptive to traditional preaching methods</li>
+        <li>Create a lasting impact on your community and beyond</li>
+      </ul>
+    </p>
+    <p>
+      In drama ministry, you'll have the opportunity to use your gifts to make a real difference in people's lives.
+      So why not take the leap and join the drama ministry team? Together, let's bring the Gospel to life and
+      inspire others to follow Jesus!
+    </p>
+  </div>
+
+  
+  <div class="contact-icons">
+    <a href="https://wa.me/2349014764782"target="_blank" class="whatsapp-icon">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="mailto:gideondramaministry@gmail.com" class="email-icon">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="footer">
+    <a href="https://www.youtube.com/@GideonDramaMinistry" target="_blank">
+      <button class="subscribe-button" onmouseover="playSound()" onclick="playSound()">Subscribe on YouTube</button>
+    </a>
+    <audio id="subscribe-sound" src="sword.mp3" preload="auto"></audio>
+  </div>
+
+
+  <script>
+    function playSound() {
+      var sound = document.getElementById('subscribe-sound');
+      sound.currentTime = 0; // Reset sound to start
+      sound.play().catch(function(error) {
+        console.log("Error playing sound: ", error); // Log errors
+      });
+    }
+  </script>
+</body>
+</html>
